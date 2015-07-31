@@ -2,11 +2,12 @@ package userExperience;
 
 import org.sikuli.script.*;
 
-public class User{
+public class User {
 	
 	private String workspace;
 	private Region r;
 	private App max;
+	private Screen s;
 
 	static String maxPath = "C:\\Program Files\\WSI\\TruVu MAX\\Bin\\Azulon.exe";
 	
@@ -15,6 +16,7 @@ public class User{
 		max = App(startMaxPath());
 		r = createIntRegion();
 		r.highlight(2);
+		s = new Screen();
 		max.open();
 	}
 
@@ -50,5 +52,9 @@ public class User{
 	
 	public void closeApp(){
 		this.max.close();
+	}
+	
+	public Screen getScreen(){
+		return s;
 	}
 }

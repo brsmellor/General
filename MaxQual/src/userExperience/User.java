@@ -54,6 +54,9 @@ public class User {
 		case 6:
 			this.setAppName("RoadBuilder.exe");
 			startString = progFiles + tvmToolPath + getAppName();
+		case 7:
+			this.setAppName("ImportMedia.exe");
+			startString = progFiles + maxPath + getAppName();
 		default :
 			this.setAppName("Azulone.exe");
 			startString = progFiles + maxPath + getAppName();

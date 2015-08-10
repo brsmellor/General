@@ -9,10 +9,12 @@ public class RoadBuilder{
 	private Region buildButtons;
 	private Region roadBuilderTab;
 	private Region earthTab;
+	private User user;
 	
 	
 	
 	public RoadBuilder(){
+	
 		
 	}
 

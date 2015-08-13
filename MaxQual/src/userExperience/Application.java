@@ -24,7 +24,7 @@ public class Application {
 		max.open();
 	}
 	
-	public Application(int whichApp){ // Which other max type application would you like to lauch.
+	public Application(int whichApp){ // Which other max type application would you like to launch.
 		max = App(startApplicationString(whichApp));
 		r = createIntRegion();
 		r.highlight(2);
@@ -39,29 +39,36 @@ public class Application {
 		case 1:
 			this.setAppName("DriveTimeConfiguration.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		case 2:
 			this.setAppName("PlaceConfiguration.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		case 3: 
 			this.setAppName("SiteSelector.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		case 4:
 			this.setAppName("StyleGuideEditor.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		case 5:
 			this.setAppName("VideoConfiguration.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		case 6:
 			this.setAppName("RoadBuilder.exe");
 			startString = progFiles + tvmToolPath + getAppName();
+			break;
 		case 7:
 			this.setAppName("ImportMedia.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		default :
 			this.setAppName("Azulone.exe");
 			startString = progFiles + maxPath + getAppName();
+			break;
 		}
-		
 		
 		return startString;
 	}

@@ -1,18 +1,6 @@
 package userExperience;
-import org.sikuli.script.Key;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Region;
 
-import java.lang.ProcessBuilder;
-import java.util.ArrayList;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
-public class tester {
+public class tester{
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
@@ -25,8 +13,8 @@ public class tester {
 		reg.setHitDir(wxpName1);
 		System.out.println(reg.getHitDir());
 		StopwatchTimer t = new StopwatchTimer();
-		User brian = new User(wxpName1);
-		*/
+		Application brian = new Application(wxpName1);*/
+		
 		
 		/*ArrayList <String> commands = new ArrayList<String>();
 		commands.add("REG");
@@ -47,33 +35,14 @@ public class tester {
 			e.printStackTrace();
 		}*/
 		//setup - install reg key to set default path for Roadbuilder Scene folder
+		
 		RoadBuilder rb = new RoadBuilder();
 		
 		String imgSrc = "C:\\UIautoImages\\UIImages\\RoadBuilder\\Open\\";
 		String imgName = "Whole_UI_Open.JPG";
 		String imgPath = imgSrc + imgName;
+		System.out.println(rb.getApplication().waitForAppear(imgPath));
 		
-		Region r = makeClickRegionFromImage(imgPath);
-		r.highlight(2);
-		
-		
-		
-		
-	}
 
-	private static Region makeClickRegionFromImage(String imgPath) {
-		BufferedImage img = null;
-		try{
-			img = ImageIO.read(new File(imgPath));
-		}
-		catch (IOException e){
-			System.out.println("Could not read " + imgPath);			
-		}
-		
-		System.out.println("Dimentions of image: " + img.getWidth() + "," + img.getHeight());
-		Region r = new Region(0,0,img.getWidth(),img.getHeight());
-		return  r;
-		
 	}
-
 }

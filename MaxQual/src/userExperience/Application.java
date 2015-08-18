@@ -2,7 +2,7 @@ package userExperience;
 
 import org.sikuli.script.*;
 
-public class Application {
+public class Application implements BrianTools{
 	
 	private String workspace;
 	private Region r;
@@ -15,9 +15,11 @@ public class Application {
 	private String appName; 
 	
 	public Application(String workspace){
-		this.appName = "Azulone.exe";
+		this.appName = "Azulon.exe";
 		this.workspace = workspace;
+		System.out.println(startMaxPath());
 		max = App(startMaxPath());
+		System.out.println(max.getName() + " --From max.getName");
 		r = createIntRegion();
 		r.highlight(2);
 		s = new Screen();
@@ -27,7 +29,7 @@ public class Application {
 	public Application(int whichApp){ // Which other max type application would you like to launch.
 		max = App(startApplicationString(whichApp));
 		r = createIntRegion();
-		r.highlight(2);
+		//r.highlight(2);
 		s = new Screen();
 		max.open();
 		
@@ -65,7 +67,7 @@ public class Application {
 			startString = progFiles + maxPath + getAppName();
 			break;
 		default :
-			this.setAppName("Azulone.exe");
+			this.setAppName("Azulon.exe");
 			startString = progFiles + maxPath + getAppName();
 			break;
 		}
@@ -87,13 +89,15 @@ public class Application {
 	}
 
 	private App App(String startMaxString) {
+		System.out.println(startMaxString + "From private App");
 		App max = new App(startMaxString);
 		return max;
 	}
 
 	private String startMaxPath() {
-		
-		return progFiles + maxPath + " " + "-workspace" + " " + getWorkspace();
+		String startString =  progFiles + maxPath + getAppName() +" " + "-workspace" + " " + getWorkspace();
+		System.out.println(startString + " --From startMaxPath()");
+		return startString;
 	}
 
 	public String getWorkspace() {

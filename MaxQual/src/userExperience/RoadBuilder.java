@@ -24,8 +24,11 @@ public class RoadBuilder{
 	
 	public Region getRegion(){
 		Region r = this.app.getRegion();
-		r.highlight();
 		return r;
+	}
+	public Application getApplication(){
+		Application a = this.app;
+		return a;
 	}
 
 	public void setMenuBar(Region menuBar) {

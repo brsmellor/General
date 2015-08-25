@@ -1,5 +1,9 @@
 package userExperience;
 
+import org.sikuli.script.Region;
+import org.sikuli.script.Screen;
+import org.sikuli.script.ScreenImage;
+
 public class tester{
 
 	@SuppressWarnings("unused")
@@ -37,12 +41,21 @@ public class tester{
 		//setup - install reg key to set default path for Roadbuilder Scene folder
 		
 		RoadBuilder rb = new RoadBuilder();
-		
 		String imgSrc = "C:\\UIautoImages\\UIImages\\RoadBuilder\\Open\\";
-		String imgName = "Whole_UI_Open.JPG";
-		String imgPath = imgSrc + imgName;
-		System.out.println(rb.getApplication().waitForAppear(imgPath));
+		String lookFor = "RB_is_open.JPG";
+		String lookIn = "Whole_UI_Open.JPG";
+		String whatToLookFor = imgSrc + lookFor;
+		String whereToLook = imgSrc + lookIn;
+		//System.out.println(rb.getApplication().waitForAppear(imgPath));
+		System.out.println(rb.getApplication().waitForAppear(whereToLook, whatToLookFor,"DigitalMedia"));
 		
+		//rb.getApplication().regionLocation();
+		
+		//Region b = new Region(604,382,215,42);
+		//b.highlight(3);
+		//Screen s = new Screen();
+		//ScreenImage sc = s.capture(b);
+		//rb.getApplication().compareImage(sc.getImage(), img1)
 
 	}
 }

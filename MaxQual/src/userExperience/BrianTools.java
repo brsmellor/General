@@ -70,18 +70,26 @@ public interface BrianTools {
 		
 	}
 	
-	default boolean waitForAppear(String imgPath){
-		Region s = new Region(makeRegionFromImage(imgPath));
+	default boolean waitForAppear(String whereToLook, String whatToLookFor, String appName){
+		boolean found = false;
+		App myApp = new App(appName);
+		Region r = new Region(makeRegionFromImage(whereToLook));
 		System.out.println("highlight where you are looking");
-		s.highlight(2);
+		r.highlight(3);
+		myApp.focus();
 		try {
-			s.wait(new Pattern(createBufferedImage(imgPath)));
-			return true;
+			r.wait(new Pattern(createBufferedImage(whatToLookFor)));
+			found = true;
 		} catch (FindFailed e) {
-			System.out.println("Could not find: " + imgPath + " On screen.");
-			e.printStackTrace();
-			return false;
+			System.out.println("Could not find: " + whatToLookFor + " On screen. try harder");
+			
+			
+			found = true;
 		}
+		return found;
 		
 	}
+
+	
+
 }

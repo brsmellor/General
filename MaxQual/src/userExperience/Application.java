@@ -24,6 +24,7 @@ public class Application implements BrianTools{
 		r.highlight(2);
 		s = new Screen();
 		max.open();
+		//this is somethign to update the file
 	}
 	
 	public Application(int whichApp){ // Which other max type application would you like to launch.

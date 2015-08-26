@@ -64,7 +64,7 @@ public interface BrianTools {
 			img = ImageIO.read(new File(imgPath));
 		}
 		catch (IOException e){
-			System.out.println("Could not read " + imgPath);			
+			System.out.println("I Could not read " + imgPath);			
 		}
 		return img;
 		

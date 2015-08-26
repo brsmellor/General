@@ -48,6 +48,7 @@ public class tester{
 		String whereToLook = imgSrc + lookIn;
 		//System.out.println(rb.getApplication().waitForAppear(imgPath));
 		System.out.println(rb.getApplication().waitForAppear(whereToLook, whatToLookFor,"DigitalMedia"));
+		//this is something to update the file
 		
 		//rb.getApplication().regionLocation();
 		
